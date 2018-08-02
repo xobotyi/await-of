@@ -15,9 +15,9 @@ You can write code that looks clean, but only unless you have to catch errors. T
 But there is a solution!☀  
 I really like the way it's done in **Go**. It has no error throwing mechanism, but has a multi-value return and the common way to handle errors in Go is to return error as a last value, like so:
 ```go
-data, error := someErrorFunc(someStuff)
-if error != nil {
-    return error
+data, err := someErrorFunc(someStuff)
+if err != nil {
+    return err
 }
 ```
 _But JavaScript has no multi-value return!_ - you would say. Sad, but true.  
