@@ -1,0 +1,21 @@
+sudo: true
+dist: trusty
+
+language: node_js
+
+node_js:
+- 10
+
+matrix:
+  fast_finish: true
+
+cache:
+  timeout: 1000
+  directories:
+  - node_modules
+
+script:
+- npm run test:coverage
+
+after_success:
+- npm run push-codacy-coverage
