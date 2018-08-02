@@ -1,0 +1,23 @@
+{
+  "name": "await-of",
+  "description": "await wrapper for easier errors handling without try-catch",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xobotyi/await-for"
+  },
+  "bugs": {
+    "url": "https://github.com/xobotyi/await-for/issues"
+  },
+  "author": "Anton Zinovyev",
+  "license": "MIT",
+  "keywords": [
+    "async",
+    "await",
+    "errors handling",
+    "promise",
+    "wrapper",
+    "node",
+    "browser"
+  ]
+}
