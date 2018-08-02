@@ -19,7 +19,7 @@ describe("await-of test",
              });
 
              it("should return thrown error as second item", async () => {
-                 const error = new Error();
+                 const error = new Error('Error occurred!');
                  const promise = new Promise((resolve, reject) => {
                      throw error;
                  });
@@ -27,5 +27,6 @@ describe("await-of test",
 
                  expect(data).toBeUndefined();
                  expect(err).toEqual(error);
+                 expect(err.message).toEqual(err.message);
              });
          });
