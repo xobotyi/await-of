@@ -14,7 +14,7 @@ ES7 `async/await` gives to developers ability to write asynchronous code that lo
 You can write code that looks clean, but only unless you have to catch errors. To catch thrown error or handle the promise's rejection you have to surround it with `try-catch` block or fallback to pure promises and from that moment cleanliness of your code is over.  
 But there is a solution!☀  
 I really like the way it's done in **Go**. It has no error throwing mechanism, but has a multi-value return and the common way to handle errors in Go is to return error as a last value, like so:
-```golang
+```go
 data, error := someErrorFunc(someStuff)
 if error != nil {
     return error
@@ -22,7 +22,7 @@ if error != nil {
 ```
 _But JavaScript has no multi-value return!_ - you would say. Sad, but true.  
 But!  
-It has a destructuring assignment. And `await-of` gives you ability to do this:
+It has a destructuring assignment and `await-of` gives you ability to do this:
 ```javascript
 import of from "await-of";
 
