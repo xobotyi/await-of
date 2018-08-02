@@ -12,7 +12,7 @@
 ## About
 ES7 `async/await` gives to developers ability to write asynchronous code that look like synchronous. But under the hood it is still just a sugar on top of the ES6 `Promise`.  
 You can write code that looks clean, but only unless you have to catch errors. To catch thrown error or handle the promise's rejection you have to surround it with `try-catch` block or fallback to pure promises and from that moment cleanliness of your code is over.  
-But there is a solution!☀  
+But there is a solution!☀️  
 I really like the way it's done in **Go**. It has no error throwing mechanism, but has a multi-value return and the common way to handle errors in Go is to return error as a last value, like so:
 ```go
 data, err := someErrorFunc(someStuff)
@@ -34,6 +34,7 @@ let a = async () => {
     return data;
 }
 ```
+There is no modifications needed in function/promise you want to await - just pass it to the `of()` and whole the magic will be done.
 
 ## Installation
 ```bash
