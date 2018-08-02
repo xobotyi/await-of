@@ -1,0 +1,8 @@
+{
+  "ignore": [
+    "node-modules/**"
+  ],
+  "presets": [
+    "env"
+  ]
+}
