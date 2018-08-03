@@ -44,22 +44,20 @@ async () => {
 instead of this:
 ```javascript
 async () => {
-    let data, status;
+    let res;
 
     try {
-        let {data: rData, status: rStatus = 0} = await axios.get('some.uri/to/get');
-        data = rData;
-        status = rStatus;
+        res = await axios.get('some.uri/to/get');
     }
-    catch (e) {
+    catch (err) {
         // rethrow if its not an axios response error
-        if (!e.response) { throw e; }
-
-        let {data: rData, status: rStatus = 0} = e.response;
-        data = rData;
-        status = rStatus;
+        if (!err.response) { throw err; }
+        
+        res = err.response;
     }
-
+    
+    const {data, status = 0} = res;
+    
     console.log(data, status);
 };
 ```
