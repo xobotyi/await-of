@@ -41,26 +41,6 @@ async () => {
     console.log(data, status);
 };
 ```
-instead of this:
-```javascript
-async () => {
-    let res;
-
-    try {
-        res = await axios.get('some.uri/to/get');
-    }
-    catch (err) {
-        // rethrow if its not an axios response error
-        if (!err.response) { throw err; }
-        
-        res = err.response;
-    }
-    
-    const {data, status = 0} = res;
-    
-    console.log(data, status);
-};
-```
 
 There is no modifications needed in function/promise you want to await - just pass it to the `of()` and whole the magic will be done.
 
