@@ -26,14 +26,44 @@ It has a destructuring assignment and `await-of` gives you ability to do this:
 ```javascript
 import of from "await-of";
 
-let a = async () => {
-    const [data, error] = await of(MyAwesomeAsyncFunction());
-    
-    if (error) throw new Error('Something amiss happened!');
-    
-    return data;
-}
+async () => {
+    let [res, err] = await of(axios.get('some.uri/to/get'));
+
+    if (err) {
+        // rethrow if its not an axios response error
+        if (!err.response) { throw err; }
+
+        res = err.response;
+    }
+
+    const {data, status = 0} = res;
+
+    console.log(data, status);
+};
 ```
+instead of this:
+```javascript
+async () => {
+    let data, status;
+
+    try {
+        let {data: rData, status: rStatus = 0} = await axios.get('some.uri/to/get');
+        data = rData;
+        status = rStatus;
+    }
+    catch (e) {
+        // rethrow if its not an axios response error
+        if (!e.response) { throw e; }
+
+        let {data: rData, status: rStatus = 0} = e.response;
+        data = rData;
+        status = rStatus;
+    }
+
+    console.log(data, status);
+};
+```
+
 There is no modifications needed in function/promise you want to await - just pass it to the `of()` and whole the magic will be done.
 
 ## Installation
