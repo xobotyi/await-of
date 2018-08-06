@@ -38,4 +38,20 @@ describe("await-of test",
                  expect(err.originalValue).toBeUndefined();
                  expect(err.message).toEqual('Rejection with empty value');
              });
+
+             it("should not throw on non-thenables", async () => {
+                 const result = "Hello world!";
+                 const [data, err] = await of(result);
+
+                 expect(err).toBeUndefined();
+                 expect(data).toEqual(result);
+             });
+
+             it("should not throw on nulls", async () => {
+                 const result = null;
+                 const [data, err] = await of(result);
+
+                 expect(err).toBeUndefined();
+                 expect(data).toEqual(result);
+             });
          });
