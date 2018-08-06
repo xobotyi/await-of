@@ -11,7 +11,7 @@ exports.default = of;
  * @return {Promise<Array>} Array with `[results, error]`
  */
 function of(promise) {
-    return promise.then(function (ret) {
+    return Promise.resolve(promise).then(function (ret) {
         return [ret];
     }).catch(function (err) {
         if (err === undefined || err === null) {
