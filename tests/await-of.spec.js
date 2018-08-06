@@ -29,4 +29,13 @@ describe("await-of test",
                  expect(err).toEqual(error);
                  expect(err.message).toEqual(err.message);
              });
+
+             it("should handle the empty value rejection", async () => {
+                 const [data, err] = await of(Promise.reject());
+
+                 expect(data).toBeUndefined();
+                 expect(err).toBeInstanceOf(Error);
+                 expect(err.originalValue).toBeUndefined();
+                 expect(err.message).toEqual('Rejection with empty value');
+             });
          });

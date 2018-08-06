@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.default = of;
 /**
@@ -11,9 +11,16 @@ exports.default = of;
  * @return {Promise<Array>} Array with `[results, error]`
  */
 function of(promise) {
-  return promise.then(function (ret) {
-    return [ret];
-  }).catch(function (err) {
-    return [undefined, err];
-  });
+    return promise.then(function (ret) {
+        return [ret];
+    }).catch(function (err) {
+        if (err === undefined || err === null) {
+            var error = new Error("Rejection with empty value");
+            error.originalValue = err;
+
+            err = error;
+        }
+
+        return [undefined, err];
+    });
 }
