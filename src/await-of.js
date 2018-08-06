@@ -5,7 +5,7 @@
  * @return {Promise<Array>} Array with `[results, error]`
  */
 export default function of(promise) {
-    return promise
+    return Promise.resolve(promise)
             .then((ret) => [ret])
             .catch((err) => {
                 if (err === undefined || err === null) {
