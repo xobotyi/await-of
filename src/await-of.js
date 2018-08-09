@@ -6,10 +6,10 @@
  */
 export default function of(promise) {
     return Promise.resolve(promise)
-            .then((ret) => [ret])
+            .then((results) => [results])
             .catch((err) => {
                 if (err === undefined || err === null) {
-                    let error = new Error("Rejection with empty value");
+                    const error = new Error("Rejection with empty value");
                     error.originalValue = err;
 
                     err = error;
