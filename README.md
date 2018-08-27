@@ -1,12 +1,12 @@
 <h1 align="center">await-of</h1>
 <p align="center">
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/badge/npm-await--of-brightgreen.svg?style=flat-square" /></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/v/await-of.svg?style=flat-square" /></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/dt/await-of.svg?style=flat-square" /></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/travis/xobotyi/await-of.svg?style=flat-square" /></a>
-    <a href="https://www.codacy.com/app/xobotyi/await-of"><img src="https://img.shields.io/codacy/grade/873d863f35924f1cbc15cb3648df42d0.svg?style=flat-square"/></a>
-    <a href="https://www.codacy.com/app/xobotyi/await-of"><img src="https://img.shields.io/codacy/coverage/873d863f35924f1cbc15cb3648df42d0.svg?style=flat-square"/></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/l/await-of.svg?style=flat-square" /></a>
+    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/badge/npm-await--of-brightgreen.svg" /></a>
+    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/v/await-of.svg" /></a>
+    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/dt/await-of.svg" /></a>
+    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/travis/xobotyi/await-of.svg" /></a>
+    <a href="https://www.codacy.com/app/xobotyi/await-of"><img src="https://api.codacy.com/project/badge/Grade/873d863f35924f1cbc15cb3648df42d0"/></a>
+    <a href="https://www.codacy.com/app/xobotyi/await-of"><img src="https://api.codacy.com/project/badge/Coverage/873d863f35924f1cbc15cb3648df42d0"/></a>
+    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/l/await-of.svg" /></a>
 </p>
 
 ## About
