@@ -31,7 +31,7 @@ async () => {
 
     if (err) {
         // rethrow if its not an axios response error
-        if (!err.response) { throw err; }
+        if (!err.response) { throw new Error(err); }
 
         res = err.response;
     }
@@ -62,11 +62,11 @@ async function someAsyncStuff(){
     
     // if promise was rejected - it's rejection value will be treated as error
     [, error] = await of(Promise.reject("ERROR!"));
-    console.log(error); // ERROR!
+    console.error(error); // ERROR!
     
     // or if promise has any uncaught errors it'll catch them too!
     [, error] = await of(new Promise(()=>{throw new TypeError('ERROR!')}));
-    console.log(error.message); // ERROR!
+    console.error(error.message); // ERROR!
 }
 ```
 
