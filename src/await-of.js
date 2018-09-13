@@ -9,7 +9,7 @@ export default function of(promise) {
             .then((results) => [results])
             .catch((err) => {
                 if (err === undefined || err === null) {
-                    const error = new Error('Rejection with empty value');
+                    const error = new Error("Rejection with empty value");
                     error.originalValue = Object.assign({}, err);
                     err = Object.assign({}, error);
                 }
