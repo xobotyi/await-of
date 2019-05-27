@@ -1,4 +1,5 @@
-node_modules/
-coverage/
-.idea/
+.idea
 package-lock.json
+node_modules
+coverage
+dist

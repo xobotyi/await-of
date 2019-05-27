@@ -2,15 +2,19 @@
   "name": "await-of",
   "description": "await wrapper for easier errors handling without try-catch",
   "version": "1.1.2",
-  "main": "dist/await-of.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xobotyi/await-for"
+    "url": "https://github.com/xobotyi/await-of.git"
   },
   "bugs": {
-    "url": "https://github.com/xobotyi/await-for/issues"
+    "url": "https://github.com/xobotyi/await-of/issues"
   },
-  "author": "Anton Zinovyev",
+  "homepage": "https://github.com/xobotyi/await-of",
+  "author": {
+    "name": "Anton Zinovyev",
+    "url": "https://github.com/xobotyi",
+    "email": "xog3@yandex.ru"
+  },
   "license": "MIT",
   "keywords": [
     "async",
@@ -21,19 +25,52 @@
     "node",
     "browser"
   ],
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "codacy-coverage": "^3.0.0",
-    "jest": "^23.4.2",
-    "rimraf": "^2.6.2"
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "prettier": {
+    "printWidth": 120
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "scripts": {
-    "build": "rimraf dist && babel src -d dist",
+    "preversion": "npm run format && npm run build",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run format && npm run test && npm run build",
+    "push-codacy-coverage": "cat ./coverage/lcov.info | codacy-coverage",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --no-cache",
-    "push-codacy-coverage": "cat ./coverage/lcov.info | codacy-coverage -p .",
-    "prepublishOnly": "npm test && npm run build"
+    "build": "rimraf ./dist && rollup --config",
+    "format": "prettier --write src/**/*.ts tests/**/*.ts src/**/*.js tests/**/*.js *.js *.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "codacy-coverage": "^3.4.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.12.3",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "/tests/.*\\.spec\\.(ts|tsx)$",
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
   }
 }

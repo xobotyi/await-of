@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "removeComments": false,
+
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+
+    "declaration": true,
+
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": ["es2017"]
+  },
+
+  "include": ["./src/**/*.ts"],
+
+  "exclude": ["node_modules"]
+}

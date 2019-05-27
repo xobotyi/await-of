@@ -1,2 +1,11 @@
-coverage/
-tests/
+.github
+coverage
+tests
+benchmark
+src
+.idea
+.gitignore
+.travis.yml
+CODE_OF_CONDUCT.md
+tsconfig.json
+rollup.config.js
