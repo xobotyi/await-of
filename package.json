@@ -2,6 +2,9 @@
   "name": "await-of",
   "description": "await wrapper for easier errors handling without try-catch",
   "version": "1.2.0",
+  "engines": {
+    "node": ">= 9"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/xobotyi/await-of.git"
