@@ -3,7 +3,7 @@
   "description": "await wrapper for easier errors handling without try-catch",
   "version": "1.2.0",
   "engines": {
-    "node": ">= 9"
+    "node": ">= 6.4"
   },
   "repository": {
     "type": "git",
