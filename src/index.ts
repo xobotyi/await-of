@@ -1,12 +1,13 @@
-export type AWAIT_OF_RETURN_TYPE = [any?, Error?];
+type Unpromisify<T> = T extends Promise<infer R> ? R : T
+type ReturnType<T> = T extends (...args: any[]) => infer T ? Unpromisify<T> : any
 
-export function of(promise: Promise<any>): Promise<AWAIT_OF_RETURN_TYPE> {
+export function of<T> (promise: Promise<ReturnType<T>>): Promise<[undefined, Error] | [ReturnType<T>]> {
   return Promise.resolve(promise)
-    .then((r: any): AWAIT_OF_RETURN_TYPE => [r])
+    .then((r: ReturnType<T>): [ReturnType<T>] => [r])
     .catch(
-      (e: Error | undefined | null): AWAIT_OF_RETURN_TYPE => {
+      (e: Error | undefined | null): [undefined, Error] => {
         if (e === undefined || e === null) {
-          return [e, new Error("Rejection with empty value")];
+          return [undefined, new Error("Rejection with empty value")];
         }
 
         return [undefined, e];
