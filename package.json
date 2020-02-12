@@ -46,7 +46,7 @@
     "format": "prettier --write src/**/*.ts tests/**/*.ts src/**/*.js tests/**/*.js *.js *.ts"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
+    "@types/jest": "^25.1.2",
     "codacy-coverage": "^3.4.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
