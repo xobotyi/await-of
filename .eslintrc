@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "extends": [
+    "@xobotyi/eslint-config/base",
+    "@xobotyi/eslint-config/typescript"
+  ],
+  "rules": {
+    "prefer-rest-params": "off",
+    "no-restricted-syntax": [
+      "error",
+      "FunctionExpression",
+      "WithStatement"
+    ]
+  }
+}

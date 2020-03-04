@@ -1,22 +1,22 @@
-import ts from "rollup-plugin-typescript2";
-import pkg from "./package.json";
+import ts from 'rollup-plugin-typescript2';
+import pkg from './package.json';
 
 export default {
-  input: "./src/index.ts",
+  input: './src/index.ts',
 
   output: [
     {
       file: pkg.module,
-      format: "es",
-      exports: "named"
+      format: 'es',
+      exports: 'named',
     },
     {
       file: pkg.main,
-      format: "umd",
-      name: "of",
+      format: 'umd',
+      name: 'of',
       sourcemap: true,
-      exports: "named"
-    }
+      exports: 'named',
+    },
   ],
 
   plugins: [
@@ -24,11 +24,11 @@ export default {
       clean: true,
       tsconfigOverride: {
         compilerOptions: {
-          module: "esnext",
-          target: "esnext",
-          declaration: true
-        }
-      }
-    })
-  ]
+          module: 'esnext',
+          target: 'esnext',
+          declaration: true,
+        },
+      },
+    }),
+  ],
 };
