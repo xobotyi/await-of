@@ -20,8 +20,11 @@ after_script:
   - yarn add -D codacy-coverage
   - cat ./coverage/lcov.info | codacy-coverage
 
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: yarn semantic-release
-
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: yarn semantic-release
