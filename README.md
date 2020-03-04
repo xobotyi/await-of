@@ -65,11 +65,11 @@ async function someAsyncStuff() {
   let error, data;
 
   // if we don't want to handle error
-  [data] = await of(Promise.reject("ERROR!"));
+  [data] = await of(Promise.reject(new Error("ERROR!")));
   console.log(data); // undefined
 
   // if promise was rejected - it's rejection value will be treated as error
-  [, error] = await of(Promise.reject("ERROR!"));
+  [, error] = await of(Promise.reject(new Error("ERROR!")));
   console.log(error); // ERROR!
 
   // or if promise has any uncaught errors it'll catch them too!
