@@ -1,13 +1,36 @@
-<h1 align="center">await-of</h1>
-<p align="center">
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/badge/npm-await--of-brightgreen.svg" /></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/v/await-of.svg" /></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/dt/await-of.svg" /></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/travis/xobotyi/await-of.svg" /></a>
-    <a href="https://www.codacy.com/app/xobotyi/await-of"><img src="https://api.codacy.com/project/badge/Grade/873d863f35924f1cbc15cb3648df42d0"/></a>
-    <a href="https://www.codacy.com/app/xobotyi/await-of"><img src="https://api.codacy.com/project/badge/Coverage/873d863f35924f1cbc15cb3648df42d0"/></a>
-    <a href="https://www.npmjs.com/package/await-of"><img src="https://img.shields.io/npm/l/await-of.svg" /></a>
-</p>
+<div align="center">
+    <h1>await-of</h1>
+    <p>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/npm/v/await-of" alt="NPM version"/>
+        </a>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/travis/xobotyi/await-of" alt="Travis-CI build status"/>
+        </a>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/npm/dw/await-of" alt="NPM weekly downloads"/>
+        </a>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/npm/license/await-of" alt="License"/>
+        </a>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/npm/types/await-of" alt="Types definition"/>
+        </a>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/codacy/grade/873d863f35924f1cbc15cb3648df42d0" alt="Codacy Code Grade"/>
+        </a>
+        <a href="https://www.npmjs.com/package/await-of">
+            <img src="https://flat.badgen.net/codacy/coverage/873d863f35924f1cbc15cb3648df42d0" alt="Codacy Coverage"/>
+        </a>
+    </p>
+</div>
+
+---
+
+<div align="center">❤️Please consider starring this project to show your love and support.🙌</div>
+
+---
+
 
 ## About
 
