@@ -8,14 +8,10 @@ export default {
     {
       file: pkg.module,
       format: 'es',
-      exports: 'named',
     },
     {
       file: pkg.main,
-      format: 'umd',
-      name: 'of',
-      sourcemap: true,
-      exports: 'named',
+      format: 'cjs',
     },
   ],
 
@@ -25,7 +21,7 @@ export default {
       tsconfigOverride: {
         compilerOptions: {
           module: 'esnext',
-          target: 'esnext',
+          target: 'es5',
           declaration: true,
         },
       },
