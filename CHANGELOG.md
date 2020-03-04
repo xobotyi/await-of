@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/xobotyi/await-of/compare/v2.0.0...v2.1.0) (2020-03-04)
+
+
+### Features
+
+* update readme badges and header; ([8fca26b](https://github.com/xobotyi/await-of/commit/8fca26bc528c32138b26f674ba0ace7f74556250))
+
 # [2.0.0](https://github.com/xobotyi/await-of/compare/v1.3.1...v2.0.0) (2020-03-04)
 
 
