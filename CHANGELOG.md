@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/xobotyi/await-of/compare/v1.3.1...v2.0.0) (2020-03-04)
+
+
+### Bug Fixes
+
+* fix build; ([9ec99fa](https://github.com/xobotyi/await-of/commit/9ec99fa505dbd65d0a91b9186f26d716d067eb52))
+* fix throw error in readme example; ([2eedd47](https://github.com/xobotyi/await-of/commit/2eedd4753043aea78bdebcf9f66edb8e590e33c3))
+
+
+### Features
+
+* rework the module. ([bf947c3](https://github.com/xobotyi/await-of/commit/bf947c38485fa0a3e773cfeda1515bd535cef2a5)), closes [#9](https://github.com/xobotyi/await-of/issues/9) [#15](https://github.com/xobotyi/await-of/issues/15)
+* specify minimal node version as requested in [#7](https://github.com/xobotyi/await-of/issues/7) ([56e8fab](https://github.com/xobotyi/await-of/commit/56e8fab3cb0b30aef9fe1d41ac58e65a705c7c88))
+
+
+### BREAKING CHANGES
+
+* now module has default export only.
+
 ## [1.3.1](https://github.com/xobotyi/await-of/compare/v1.3.0...v1.3.1) (2020-03-04)
 
 
