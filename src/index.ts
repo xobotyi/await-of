@@ -1,15 +1,15 @@
-export type AWAIT_OF_RETURN_TYPE = [any?, Error?];
+export type AwaitOfReturnType<T> = Readonly<[T, Error?]>;
 
-export function of(promise: Promise<any>): Promise<AWAIT_OF_RETURN_TYPE> {
+export function of<T = any>(promise: Promise<T>): Promise<AwaitOfReturnType<T>> {
   return Promise.resolve(promise)
-    .then((r: any): AWAIT_OF_RETURN_TYPE => [r])
+    .then((r: T): AwaitOfReturnType<T> => [r])
     .catch(
-      (e: Error | undefined | null): AWAIT_OF_RETURN_TYPE => {
+      (e: Error | undefined | null): AwaitOfReturnType<T> => {
         if (e === undefined || e === null) {
-          return [e, new Error("Rejection with empty value")];
+          return [e as any, new Error("Rejection with empty value")];
         }
 
-        return [undefined, e];
+        return [undefined as any, e];
       }
     );
 }
