@@ -48,6 +48,9 @@
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   },
+  "engines": {
+    "node": ">=7.6.0"
+  },
   "scripts": {
     "lint": "eslint ./{src,tests}/**/*.ts ./*.{ts,js}",
     "lint:fix": "yarn lint --fix",
