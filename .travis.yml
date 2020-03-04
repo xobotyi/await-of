@@ -3,10 +3,8 @@ dist: trusty
 
 language: node_js
 node_js:
-  - "stable"
-  - "latest"
-  - 8
-  - 10
+  - stable
+  - lts/*
 
 cache:
   yarn: true
@@ -16,12 +14,18 @@ script:
   - yarn build
   - yarn test
 
-after_script:
-  - yarn add -D codacy-coverage
-  - cat ./coverage/lcov.info | codacy-coverage
-
 jobs:
   include:
+    - stage: coverage push
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - yarn test
+          - yarn add -D codacy-coverage
+          - cat ./coverage/lcov.info | codacy-coverage
+
     - stage: release
       node_js: lts/*
       deploy:
