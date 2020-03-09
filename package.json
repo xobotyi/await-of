@@ -41,7 +41,7 @@
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
-    "rollup": "^1.32.0",
+    "rollup": "^2.0.2",
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript2": "^0.26.0",
     "semantic-release": "^17.0.4",
