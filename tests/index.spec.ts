@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion,@typescript-eslint/ban-ts-ignore */
-import of from '../src';
+import { of } from '../src';
 
 describe('await-of', () => {
   it('should return resolve result as first array`s item', async () => {
