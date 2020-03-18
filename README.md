@@ -51,7 +51,7 @@ But!
 It has a destructuring assignment and `await-of` gives you ability to do this:
 
 ```javascript
-import of from "await-of";
+import { of } from "await-of";
 
 async () => {
   let [res, err] = await of(axios.get("some.uri/to/get"));
@@ -82,7 +82,7 @@ npm i --save await-of
 ## Usage
 
 ```javascript
-import of from "await-of";
+import { of } from "await-of";
 
 async function someAsyncStuff() {
   let error, data;
