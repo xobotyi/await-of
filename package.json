@@ -62,12 +62,10 @@
   },
   "lint-staged": {
     "./{src,tests}/**/*.ts": [
-      "yarn lint:fix",
-      "git add"
+      "yarn lint:fix"
     ],
     "./*.{ts,js}": [
-      "yarn lint:fix",
-      "git add"
+      "yarn lint:fix"
     ]
   },
   "husky": {

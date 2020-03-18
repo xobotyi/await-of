@@ -1,6 +1,6 @@
 type AwaitOfReturnType<T> = Readonly<[T | undefined, Error?]>;
 
-export default function of<T = any>(promise: Promise<T>): Promise<AwaitOfReturnType<T>> {
+export function of<T = any>(promise: Promise<T>): Promise<AwaitOfReturnType<T>> {
   return Promise.resolve(promise)
     .then((result): Readonly<[T]> => [result])
     .catch(
