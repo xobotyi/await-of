@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/xobotyi/await-of/compare/v2.1.0...v3.0.0) (2020-03-18)
+
+
+### chore
+
+* re-create yarn.lock file; ([017dda0](https://github.com/xobotyi/await-of/commit/017dda006868b5b020387246f158a14deb7a954a))
+
+
+### BREAKING CHANGES
+
+* the function now name exported!
+
 # [2.1.0](https://github.com/xobotyi/await-of/compare/v2.0.0...v2.1.0) (2020-03-04)
 
 
