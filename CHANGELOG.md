@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/xobotyi/await-of/compare/v3.0.0...v3.1.0) (2020-05-21)
+
+
+### Features
+
+* add patreon funding link ([747d970](https://github.com/xobotyi/await-of/commit/747d970004e66be588a335d85db982c000194a03))
+
 # [3.0.0](https://github.com/xobotyi/await-of/compare/v2.1.0...v3.0.0) (2020-03-18)
 
 
