@@ -9,6 +9,10 @@
   "bugs": {
     "url": "https://github.com/xobotyi/await-of/issues"
   },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/xobotyi"
+  },
   "homepage": "https://github.com/xobotyi/await-of",
   "author": {
     "name": "Anton Zinovyev",
