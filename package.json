@@ -40,7 +40,7 @@
     "@xobotyi/eslint-config": "^1.4.0",
     "@xobotyi/preset-typescript": "^1.0.0",
     "eslint": "^7.0.0",
-    "husky": "^4.2.3",
+    "husky": "^5.0.9",
     "jest": "^26.0.1",
     "lint-staged": "^10.0.8",
     "prettier": "^2.0.2",
