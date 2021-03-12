@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "./dist",
+    "./coverage",
+    "./node_modules"
+  ],
+  "include": [
+    ".eslintrc.js",
+    "**/*.js",
+    "**/*.ts"
+  ]
+}

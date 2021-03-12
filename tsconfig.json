@@ -1,21 +1,15 @@
 {
+  "extends": "@xobotyi/preset-typescript/tsconfig.json",
   "compilerOptions": {
-    "sourceMap": false,
-    "removeComments": false,
-
-    "noImplicitReturns": true,
-    "noUnusedParameters": true,
-    "strictNullChecks": true,
+    "strict": true,
     "alwaysStrict": true,
-
-    "declaration": true,
-
-    "target": "es2017",
-    "module": "commonjs",
-    "lib": ["es2017"]
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "noEmit": true,
+    "sourceMap": false
   },
-
-  "include": ["./src/**/*.ts"],
-
-  "exclude": ["node_modules"]
+  "include": [
+    "./src/**/*.ts"
+  ]
 }

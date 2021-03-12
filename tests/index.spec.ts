@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion,@typescript-eslint/ban-ts-ignore */
 import { of } from '../src';
 
 describe('await-of', () => {
@@ -21,12 +20,12 @@ describe('await-of', () => {
     const [res, err] = await of(
       new Promise(() => {
         throw new Error('Unhandled error!');
-      }),
+      })
     );
 
     expect(res).toBeUndefined();
     expect(err).toBeInstanceOf(Error);
-    expect(err!.message).toBe('Unhandled error!');
+    expect(err?.message).toBe('Unhandled error!');
   });
 
   it('should handle empty/null value rejection', async () => {
@@ -34,7 +33,7 @@ describe('await-of', () => {
 
     expect(res).toBeUndefined();
     expect(err).toBeInstanceOf(Error);
-    expect(err!.message).toBe('Rejection with empty value');
+    expect(err?.message).toBe('Rejection with empty value');
   });
 
   it('should handle empty/null value rejection', async () => {
@@ -42,11 +41,11 @@ describe('await-of', () => {
 
     expect(res).toBeUndefined();
     expect(err).toBeInstanceOf(Error);
-    expect(err!.message).toBe('Rejection with empty value');
+    expect(err?.message).toBe('Rejection with empty value');
   });
 
   it('should not throw on non-thenables', async () => {
-    // @ts-ignore
+    // @ts-expect-error testing inappropriate use
     const [data, err] = await of('Hello world!');
 
     expect(err).toBeUndefined();
@@ -54,7 +53,7 @@ describe('await-of', () => {
   });
 
   it('should not throw on nulls', async () => {
-    // @ts-ignore
+    // @ts-expect-error testing inappropriate use
     const [data, err] = await of(null);
 
     expect(err).toBeUndefined();

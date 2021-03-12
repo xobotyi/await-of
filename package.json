@@ -2,6 +2,16 @@
   "name": "await-of",
   "description": "await wrapper for easier errors handling without try-catch",
   "version": "3.1.0",
+  "files": [
+    "cjs",
+    "esm",
+    "esnext"
+  ],
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "esnext": "esnext/index.js",
+  "types": "cjs/index.d.ts",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/xobotyi/await-of.git"
@@ -29,74 +39,60 @@
     "node",
     "browser"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "devDependencies": {
-    "@semantic-release/changelog": "^5.0.0",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@jamesacarr/eslint-formatter-github-actions": "^0.1.0",
+    "@jamesacarr/jest-reporter-github-actions": "^0.0.4",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "@semantic-release/npm": "^7.0.3",
-    "@types/jest": "^26.0.0",
-    "@xobotyi/eslint-config": "^1.4.0",
+    "@semantic-release/github": "^7.2.3",
+    "@types/jest": "^26.0.24",
+    "@xobotyi/eslint-config": "^2.2.0",
     "@xobotyi/preset-typescript": "^1.0.0",
-    "eslint": "^7.0.0",
-    "husky": "^4.2.3",
-    "jest": "^26.0.1",
-    "lint-staged": "^10.0.8",
-    "prettier": "^2.0.2",
+    "commitlint": "^12.1.4",
+    "concurrently": "^6.2.0",
+    "eslint": "^7.31.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.0.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.0.2",
-    "rollup-plugin-terser": "^7.0.0",
-    "rollup-plugin-typescript2": "^0.29.0",
-    "semantic-release": "^17.0.4",
-    "ts-jest": "^26.0.0",
-    "typescript": "^3.8.3"
+    "semantic-release": "^17.4.4",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5",
+    "yarn": "^1.22.10"
   },
   "engines": {
     "node": ">=7.6.0"
   },
   "scripts": {
+    "prepare": "husky install",
+    "build": "yarn build:cleanup && concurrently yarn:build:cjs yarn:build:esm yarn:build:esnext --kill-others-on-fail",
+    "build:cleanup": "rimraf ./cjs ./esm ./esnext ./types",
+    "build:cjs": "tsc -p ./tsconfig.build.json --module CommonJS --target ES5 --outDir ./cjs",
+    "build:esm": "tsc -p ./tsconfig.build.json --module ES6 --target ES5 --outDir ./esm",
+    "build:esnext": "tsc -p ./tsconfig.build.json --module ESNext --target ESNext --outDir ./esnext",
     "lint": "eslint ./{src,tests}/**/*.ts ./*.{ts,js}",
     "lint:fix": "yarn lint --fix",
-    "lint:types": "tsc --noEmit",
-    "build": "rimraf ./dist && rollup --config",
-    "test": "jest",
-    "test:coverage": "jest --collect-coverage",
-    "prepublishOnly": "yarn build",
-    "semantic-release": "semantic-release"
+    "test": "jest --coverage=false",
+    "test:coverage": "jest --coverage"
   },
   "lint-staged": {
-    "./{src,tests}/**/*.ts": [
-      "yarn lint:fix"
-    ],
-    "./*.{ts,js}": [
-      "yarn lint:fix"
+    "*.{js,jsx,ts,tsx,md,mdx}": "eslint --fix"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint:types && lint-staged",
-      "pre-push": "yarn lint:fix && rimraf dist && yarn build && yarn test"
-    }
-  },
   "release": {
-    "branches": [
-      "master",
-      {
-        "name": "next",
-        "prerelease": "rc"
-      }
-    ],
-    "verifyConditions": [
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/git",
       "@semantic-release/github"
-    ],
-    "prepare": [
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git"
     ]
   }
 }

@@ -2,4 +2,6 @@
 package-lock.json
 node_modules
 coverage
-dist
+cjs
+esm
+esnext

@@ -1,0 +1,130 @@
+name: "CI"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: "Lint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v2.3.0
+        with:
+          node-version: 15
+
+      - name: "Install dependencies"
+        run: yarn install --frozen-lockfile
+
+      - name: "Lint"
+        run: yarn lint -f @jamesacarr/github-actions
+
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v2.3.0
+        with:
+          node-version: 15
+
+      - name: "Install dependencies"
+        run: yarn install --frozen-lockfile
+
+      - name: "Build"
+        run: yarn build
+
+      - name: "Tests against build"
+        run: yarn jest --selectProjects dom-cjs dom-package
+
+  test:
+    name: "Test"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v2.3.0
+        with:
+          node-version: 15
+
+      - name: "Install dependencies"
+        run: yarn install --frozen-lockfile
+
+      - name: "Test"
+        run: yarn test:coverage --testLocationInResults --reporters=default --reporters=@jamesacarr/jest-reporter-github-actions
+
+      - name: "Upload coverage to Codecov"
+        uses: codecov/codecov-action@v2.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage/lcov.info
+          fail_ci_if_error: true
+
+  dependabot-merge:
+    name: "Dependabot automerge"
+    runs-on: ubuntu-latest
+    needs: [ "test", "build", "lint" ]
+    if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v2.2.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  semantic-release:
+    name: "Release"
+    runs-on: ubuntu-latest
+    needs: [ "test", "build", "lint" ]
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    outputs:
+      new-release-published: ${{ steps.release.outputs.new-release-published }}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: "master"
+
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v2.3.0
+        with:
+          node-version: 15
+
+      - name: "Install dependencies"
+        run: yarn install --frozen-lockfile
+
+      - name: "Build package"
+        run: yarn build
+
+      - name: "Release"
+        id: "release"
+        uses: codfish/semantic-release-action@v1.9.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
