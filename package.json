@@ -61,6 +61,7 @@
     "lint:types": "tsc --noEmit",
     "build": "rimraf ./dist && rollup --config",
     "test": "jest",
+    "test:coverage": "jest --collect-coverage",
     "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release"
   },

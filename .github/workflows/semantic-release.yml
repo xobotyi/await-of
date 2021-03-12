@@ -1,0 +1,31 @@
+name: "semantic-release"
+
+on:
+  workflow_run:
+    workflows: [ "Run Tests" ]
+    branches: [ "master" ]
+    types: [ "completed" ]
+
+jobs:
+  release:
+    name: "semantic-release"
+    runs-on: ubuntu-latest
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      ( github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch' )
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 15
+
+      - name: "Install dependencies"
+        uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
+
+      - name: "semantic-release"
+        run: yarn semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
