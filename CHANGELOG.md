@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/xobotyi/await-of/compare/v3.1.0...v3.1.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* update README.md and gha config ([98d78e2](https://github.com/xobotyi/await-of/commit/98d78e265f0836128450f54c363217efc575d36a))
+
 # [3.1.0](https://github.com/xobotyi/await-of/compare/v3.0.0...v3.1.0) (2020-05-21)
 
 
