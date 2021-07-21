@@ -1,28 +1,17 @@
 <div align="center">
-    <h1>await-of</h1>
-    <p>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/npm/v/await-of" alt="NPM version"/>
-        </a>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/travis/xobotyi/await-of" alt="Travis-CI build status"/>
-        </a>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/npm/dw/await-of" alt="NPM weekly downloads"/>
-        </a>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/npm/license/await-of" alt="License"/>
-        </a>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/npm/types/await-of" alt="Types definition"/>
-        </a>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/codacy/grade/873d863f35924f1cbc15cb3648df42d0" alt="Codacy Code Grade"/>
-        </a>
-        <a href="https://www.npmjs.com/package/await-of">
-            <img src="https://flat.badgen.net/codacy/coverage/873d863f35924f1cbc15cb3648df42d0" alt="Codacy Coverage"/>
-        </a>
-    </p>
+
+# await-of
+
+await wrapper for easier errors handling without try-catch
+
+[![NPM Version](https://flat.badgen.net/npm/v/await-of)](https://www.npmjs.com/package/await-of)
+[![NPM Downloads](https://flat.badgen.net/npm/dm/await-of)](https://www.npmjs.com/package/await-of)
+[![NPM Dependents](https://flat.badgen.net/npm/dependents/await-of)](https://www.npmjs.com/package/await-of)
+[![Build](https://img.shields.io/github/workflow/status/xobotyi/await-of/CI?style=flat-square)](https://github.com/xobotyi/await-of/actions)
+[![Coverage](https://flat.badgen.net/codecov/c/github/xobotyi/await-of)](https://app.codecov.io/gh/xobotyi/await-of)
+[![Types](https://flat.badgen.net/npm/types/await-of)](https://www.npmjs.com/package/await-of)
+[![Tree Shaking](https://flat.badgen.net/bundlephobia/tree-shaking/await-of)](https://bundlephobia.com/result?p=await-of)
+
 </div>
 
 ---

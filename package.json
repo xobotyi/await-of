@@ -78,7 +78,7 @@
     "test:coverage": "jest --coverage"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,mdx}": "eslint --fix"
+    "*.{js,ts}": "eslint --fix"
   },
   "commitlint": {
     "extends": [
