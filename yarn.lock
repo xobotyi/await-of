@@ -7906,9 +7906,9 @@ yargs@^17.0.0:
     yargs-parser "^20.2.2"
 
 yarn@^1.22.10:
-  version "1.22.14"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.14.tgz#f77caaa9e86b19e2401c2745a45d20623368acf7"
-  integrity sha512-V6wPpGH6FaToKlXbqzpTnTWzy6kQdzoAz8yR3jhymaxD3wtB70tkagsRQEqFX7leRZAXFjkdaSWwdq91j1VZOw==
+  version "1.22.15"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.15.tgz#3431d5f134d3c752a57a9dd7f5e1167627ca3cc3"
+  integrity sha512-AzoEDxj256BOS/jqDXA3pjyhmi4FRBBUMgYoTHI4EIt2EhREkvH0soPVEtnD+DQIJfU5R9bKhcZ1H9l8zPWeoA==
 
 yn@3.1.1:
   version "3.1.1"
