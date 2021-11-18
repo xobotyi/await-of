@@ -49,7 +49,7 @@
     "@types/jest": "^27.0.0",
     "@xobotyi/eslint-config": "^2.2.0",
     "@xobotyi/preset-typescript": "^1.0.0",
-    "commitlint": "^14.1.0",
+    "commitlint": "^15.0.0",
     "concurrently": "^6.2.0",
     "eslint": "^7.31.0",
     "husky": "^7.0.1",
