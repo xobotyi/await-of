@@ -40,7 +40,7 @@
     "browser"
   ],
   "devDependencies": {
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@jamesacarr/eslint-formatter-github-actions": "^0.1.0",
     "@jamesacarr/jest-reporter-github-actions": "^0.0.4",
     "@semantic-release/changelog": "^6.0.0",
